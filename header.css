@@ -1,0 +1,545 @@
+/* ===== Breeze Lux header, drawer and search (shared by every page) ===== */
+
+:root {
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: block;
+  padding: 0;
+  background: var(--bg);
+  color: var(--white);
+  font-family: Arial, sans-serif;
+  box-shadow: 0 5px 22px rgba(0, 0, 0, 0.12);
+}
+
+/* Top strip: Contact and language. It slides up on scroll down. */
+.top-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 1.25rem;
+  transition: transform 0.45s var(--ease);
+}
+
+/* Main bar: menu, name and icons. It moves up with the top strip. */
+.main-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5rem 1.25rem 1rem;
+  transition: padding-top 0.45s var(--ease);
+}
+
+.site-header.top-hidden .top-bar {
+  transform: translateY(-100%);
+}
+
+.site-header.top-hidden .main-bar {
+  padding-top: 0.9rem;
+}
+
+.top-contact {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.top-contact svg {
+  width: 26px;
+  height: 26px;
+  stroke: var(--white);
+  fill: none;
+  stroke-width: 1.5;
+}
+
+.top-contact:hover,
+.top-contact:active {
+  color: var(--aqua);
+}
+
+.top-contact:hover svg,
+.top-contact:active svg {
+  stroke: var(--aqua);
+}
+
+.contact-wrap {
+  position: relative;
+}
+
+.lang-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+}
+
+.menu-toggle {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  padding: 0.3rem;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.menu-icon span {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: var(--white);
+}
+
+.menu-icon:hover span,
+.menu-icon:active span {
+  background: var(--aqua);
+}
+
+.logo {
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--white);
+  text-decoration: none;
+  margin-left: -60px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.main-icons {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.icon-btn {
+  display: block;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.icon-btn svg {
+  width: 100%;
+  height: 100%;
+  stroke: var(--white);
+  fill: none;
+  stroke-width: 1.8;
+}
+
+.icon-btn:hover svg,
+.icon-btn:active svg {
+  stroke: var(--aqua);
+}
+
+/* Language box */
+.lang-trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  padding: 0.6rem 0.9rem;
+  background: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  color: var(--text-dark);
+  font-size: 0.95rem;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.lang-icon,
+.lang-arrow {
+  flex-shrink: 0;
+  stroke: var(--text-dark);
+  fill: none;
+  stroke-width: 1.5;
+  width: 22px;
+  height: 22px;
+}
+
+.lang-arrow {
+  width: 18px;
+  height: 18px;
+}
+
+.lang-current {
+  flex: 1;
+}
+
+/* Contact and language windows: paper unroll */
+.contact-menu,
+.lang-menu {
+  display: block;
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  background: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  z-index: 200;
+  clip-path: polygon(45% 0%, 55% 0%, 55% 0%, 45% 0%);
+  transform: perspective(700px) rotateX(-22deg) translateY(-14px) scale(0.94);
+  transform-origin: top center;
+  transition:
+    clip-path 0.7s cubic-bezier(0.34, 1.56, 0.64, 1),
+    transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1),
+    opacity 0.35s ease,
+    visibility 0s linear 0.7s;
+}
+
+.contact-menu {
+  top: calc(100% + 0.6rem);
+  left: 0;
+  min-width: 200px;
+  transform-origin: top left;
+}
+
+.lang-menu {
+  top: calc(100% + 0.5rem);
+  left: 0;
+  right: 0;
+}
+
+.contact-wrap .menu-toggle:checked ~ .contact-menu,
+.lang-wrap .menu-toggle:checked ~ .lang-menu {
+  opacity: 1;
+  visibility: visible;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  transform: perspective(700px) rotateX(0deg) translateY(0) scale(1);
+  transition:
+    clip-path 0.7s cubic-bezier(0.34, 1.56, 0.64, 1),
+    transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1),
+    opacity 0.35s ease,
+    visibility 0s;
+}
+
+.contact-menu a,
+.lang-menu a {
+  display: block;
+  padding: 0.9rem 1.2rem;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  text-decoration: none;
+  border-bottom: 1px solid #ececec;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 0.2s ease, transform 0.3s ease;
+}
+
+.contact-menu a {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.lang-menu a {
+  padding: 0.85rem 1rem;
+}
+
+.contact-menu a:last-child,
+.lang-menu a:last-child {
+  border-bottom: none;
+}
+
+.contact-menu a:hover,
+.contact-menu a:active,
+.lang-menu a:hover,
+.lang-menu a:active {
+  background: #eaf8f6;
+}
+
+.contact-menu svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--bg);
+  flex-shrink: 0;
+}
+
+.contact-wrap .menu-toggle:checked ~ .contact-menu a,
+.lang-wrap .menu-toggle:checked ~ .lang-menu a {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.4s ease 0.2s, transform 0.5s var(--ease) 0.2s;
+}
+
+/* Side drawer: starts directly under the header, whatever its height */
+.mobile-menu {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  bottom: auto;
+  width: 80%;
+  max-width: 320px;
+  height: 100vh;
+  height: 100dvh;
+  padding: 1.5rem 1.5rem 2rem;
+  background: var(--bg);
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 8px 0 30px rgba(0, 0, 0, 0.3);
+  transform: translateX(-100%);
+  transition: transform 0.45s var(--ease);
+  overflow-y: auto;
+  z-index: 50;
+}
+
+.mobile-menu a {
+  display: block;
+  padding: 0.8rem 0;
+  color: var(--white);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-menu a:hover,
+.mobile-menu a:active {
+  color: var(--aqua);
+}
+
+.mobile-menu .mobile-book {
+  margin-top: 1rem;
+  text-align: center;
+  background: var(--aqua);
+  color: var(--navy);
+  border-radius: 999px;
+  border-bottom: none;
+  font-weight: 600;
+}
+
+.menu-toggle:checked ~ .mobile-menu {
+  transform: translateX(0);
+}
+
+#search-toggle:checked ~ .mobile-menu,
+#account-toggle:checked ~ .mobile-menu,
+#contact-toggle:checked ~ .mobile-menu,
+#lang-toggle:checked ~ .mobile-menu {
+  transform: translateX(-100%);
+}
+
+/* Search */
+.search-panel,
+.account-panel {
+  display: none;
+  padding: 0 1.25rem 1.2rem;
+}
+
+.search-panel {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  padding: 0.6rem 1.25rem 0.4rem;
+  visibility: hidden;
+  transition: visibility 0s linear 0.7s;
+}
+
+#search-toggle:checked ~ .search-panel {
+  visibility: visible;
+  transition: visibility 0s;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--white);
+  color: var(--text-dark);
+  font-size: 1rem;
+  outline: none;
+  transform-origin: calc(100% - 14px) 50%;
+  transform: scaleX(0);
+  opacity: 0;
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.2s ease;
+}
+
+#search-toggle:checked ~ .search-panel .search-input {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+.search-input:focus {
+  box-shadow: 0 0 0 2px var(--aqua);
+}
+
+.search-results {
+  margin-top: 0.6rem;
+  background: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.search-results:empty {
+  display: none;
+}
+
+.search-result {
+  display: block;
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid #ececec;
+  color: var(--text-dark);
+  text-decoration: none;
+}
+
+.search-result:last-child {
+  border-bottom: none;
+}
+
+.search-result:hover,
+.search-result:active {
+  background: #eaf8f6;
+}
+
+.search-result strong {
+  display: block;
+  color: var(--navy);
+  font-size: 0.95rem;
+}
+
+.search-result span {
+  display: block;
+  margin-top: 0.2rem;
+  color: #6b6265;
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.search-empty {
+  margin-top: 0.6rem;
+  padding: 0.9rem 1rem;
+  background: var(--white);
+  border-radius: 10px;
+  color: #6b6265;
+  font-size: 0.9rem;
+}
+
+/* Account */
+#account-toggle:checked ~ .account-panel {
+  display: block;
+}
+
+.account-panel {
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.account-title {
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.account-btn {
+  display: block;
+  text-align: center;
+  padding: 0.75rem;
+  margin-bottom: 0.6rem;
+  border: 1px solid var(--white);
+  border-radius: 999px;
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.account-btn:hover {
+  background: var(--white);
+  color: var(--navy);
+}
+
+.account-primary {
+  background: var(--aqua);
+  border-color: var(--aqua);
+  color: var(--navy);
+  font-weight: 600;
+}
+
+.account-link {
+  display: inline-block;
+  margin-top: 0.4rem;
+  color: var(--aqua);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  .top-bar {
+    padding: 0.9rem 2.5rem;
+  }
+
+  .main-bar {
+    padding: 5rem 2.5rem 1rem;
+  }
+
+  .site-header.top-hidden .main-bar {
+    padding-top: 0.9rem;
+  }
+
+  .lang-wrap {
+    max-width: 320px;
+  }
+
+  .menu-icon {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: none !important;
+  }
+
+  .search-panel,
+  .account-panel {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+/* Pages other than the home page: keep content below the fixed header.
+   The space shrinks along with the header when the top strip hides. */
+.has-fixed-header {
+  padding-top: 8.5rem;
+  transition: padding-top 0.45s var(--ease);
+}
+
+.has-fixed-header.header-collapsed {
+  padding-top: 4.5rem;
+}
+
+@media (min-width: 768px) {
+  .has-fixed-header {
+    padding-top: 8rem;
+  }
+
+  .has-fixed-header.header-collapsed {
+    padding-top: 4.5rem;
+  }
+}

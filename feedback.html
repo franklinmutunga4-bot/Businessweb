@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback | Breeze Lux</title>
+
+  <style>
+    :root {
+      --bg: #574d50;
+      --navy: #0b2545;
+      --aqua: #7fd8d0;
+      --white: #ffffff;
+      --text-dark: #3a3335;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f1f2;
+      color: var(--text-dark);
+      min-height: 100vh;
+    }
+
+    .feedback-header {
+      background: var(--bg);
+      color: var(--white);
+      padding: 1rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .feedback-header .logo {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .back-link {
+      color: var(--aqua);
+      text-decoration: none;
+      font-size: 0.95rem;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Language switch */
+    .lang-switch {
+      display: flex;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .lang-btn {
+      background: transparent;
+      color: var(--white);
+      border: none;
+      padding: 0.35rem 0.8rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .lang-btn.is-active {
+      background: var(--aqua);
+      color: var(--navy);
+    }
+
+    .feedback-wrap {
+      max-width: 560px;
+      margin: 2rem auto;
+      padding: 0 1.25rem 3rem;
+    }
+
+    .feedback-wrap h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--navy);
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .feedback-intro {
+      color: #6b6265;
+      margin-bottom: 1.8rem;
+      line-height: 1.6;
+    }
+
+    .feedback-form {
+      background: var(--white);
+      padding: 1.8rem 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .field {
+      margin-bottom: 1.2rem;
+    }
+
+    .field label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: var(--navy);
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      padding: 0.75rem 0.9rem;
+      border: 1px solid #d8d2d5;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 1rem;
+      background: #fbfafa;
+    }
+
+    .field textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      outline: none;
+      border-color: var(--aqua);
+      box-shadow: 0 0 0 2px var(--aqua);
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 0.95rem;
+      border: none;
+      border-radius: 999px;
+      background: var(--aqua);
+      color: var(--navy);
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .submit-btn:hover {
+      background: var(--navy);
+      color: var(--white);
+      transform: translateY(-1px);
+    }
+
+    .note {
+      font-size: 0.85rem;
+      color: #6b6265;
+      margin-top: 1rem;
+      text-align: center;
+    }
+  </style>
+  <link rel="stylesheet" href="header.css">
+</head>
+<body class="has-fixed-header">
+
+  <header class="site-header">
+
+  <div class="top-bar">
+    <div class="contact-wrap">
+      <input type="checkbox" id="contact-toggle" class="menu-toggle">
+      <label for="contact-toggle" class="top-contact">
+        <svg viewBox="0 0 24 24">
+          <rect x="2" y="5" width="20" height="14" rx="2"/>
+          <polyline points="2,6 12,13 22,6"/>
+        </svg>
+        <span data-sw="Wasiliana">Contact</span>
+      </label>
+
+      <div class="contact-menu">
+        <a href="https://wa.me/254758966762" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/>
+            <path d="M8.5 9.5c.3 2 2 4.2 4.2 5.2l1.3-1.3 1.8.8-.6 1.6c-.3.6-1 .8-1.6.6-3.2-1-5.8-3.6-6.4-6.8-.2-.6 0-1.3.6-1.6l1.6-.6.8 1.8-1.7 1.3z"/>
+          </svg>
+          WhatsApp
+        </a>
+        <a href="tg://resolve?phone=254758966762">
+          <svg viewBox="0 0 24 24">
+            <path d="M21.5 4.5L2.8 11.7c-.8.3-.8 1.1 0 1.4l4.6 1.4 1.8 5.5c.2.6.9.8 1.4.4l2.6-2.1 4.8 3.5c.6.4 1.3.1 1.5-.6L23 5.7c.2-.8-.5-1.4-1.5-1.2z"/>
+          </svg>
+          Telegram
+        </a>
+        <a href="https://www.facebook.com/yourpage" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24">
+            <path d="M14 8V6c0-.8.4-1.2 1.2-1.2H17V2h-2.8C11.4 2 10 3.5 10 6v2H8v3h2v11h4V11h2.6l.4-3H14z"/>
+          </svg>
+          Facebook
+        </a>
+        <a href="mailto:franklinmutunga4@gmail.com">
+          <svg viewBox="0 0 24 24">
+            <path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/>
+          </svg>
+          <span data-sw="Barua pepe">Email</span>
+        </a>
+        <a href="tel:+254758966762">
+          <svg viewBox="0 0 24 24">
+            <path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
+          </svg>
+          <span data-sw="Piga Simu">Call Us</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="lang-wrap">
+      <input type="checkbox" id="lang-toggle" class="menu-toggle">
+      <label for="lang-toggle" class="lang-trigger">
+        <svg class="lang-icon" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10"/>
+          <ellipse cx="12" cy="12" rx="4" ry="10"/>
+          <line x1="2" y1="12" x2="22" y2="12"/>
+        </svg>
+        <span class="lang-current">English (UK)</span>
+        <svg class="lang-arrow" viewBox="0 0 24 24">
+          <polyline points="6,9 12,15 18,9"/>
+        </svg>
+      </label>
+
+      <div class="lang-menu">
+        <a href="#" data-lang="English (UK)">English (UK)</a>
+        <a href="#" data-lang="English (US)">English (US)</a>
+        <a href="#" data-lang="Swahili">Swahili</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-bar">
+    <label for="menu-toggle" class="menu-icon" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <a href="index.html" class="logo">Breeze Lux</a>
+
+    <div class="main-icons">
+      <label for="search-toggle" class="icon-btn" aria-label="Search">
+        <svg viewBox="0 0 24 24">
+          <circle cx="11" cy="11" r="7"/>
+          <line x1="16.5" y1="16.5" x2="22" y2="22"/>
+        </svg>
+      </label>
+      <label for="account-toggle" class="icon-btn" aria-label="Account">
+        <svg viewBox="0 0 24 24">
+          <circle cx="12" cy="8" r="4"/>
+          <path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/>
+        </svg>
+      </label>
+    </div>
+  </div>
+
+  <input type="checkbox" id="search-toggle" class="menu-toggle">
+  <div class="search-panel">
+    <input type="search" class="search-input" placeholder="Search services, prices, FAQs..." data-sw-placeholder="Tafuta huduma, bei, maswali..." aria-label="Search">
+  </div>
+
+  <input type="checkbox" id="account-toggle" class="menu-toggle">
+  <div class="account-panel">
+    <p class="account-title" data-sw="Karibu Breeze Lux">Welcome to Breeze Lux</p>
+    <a href="#account" class="account-btn account-primary" data-sw="Ingia">Log In</a>
+    <a href="#account" class="account-btn" data-sw="Fungua Akaunti">Create Account</a>
+    <a href="#orders" class="account-link" data-sw="Fuatilia Oda Yako">Track an Order</a>
+  </div>
+
+  <input type="checkbox" id="menu-toggle" class="menu-toggle">
+  <nav class="mobile-menu">
+    <a href="index.html" data-sw="Nyumbani">Home</a>
+    <a href="index.html#services" data-sw="Huduma">Services</a>
+    <a href="index.html#pricing" data-sw="Bei">Pricing</a>
+    <a href="how-it-works.html" data-sw="Jinsi Inavyofanya Kazi">How It Works</a>
+    <a href="index.html#reviews" data-sw="Maoni">Reviews</a>
+    <a href="index.html#faq" data-sw="Maswali">FAQ</a>
+    <a href="feedback.html" data-sw="Maoni na Malalamiko">Feedback</a>
+    <a href="booking.html" class="mobile-book" data-sw="Omba Kuchukuliwa">Book a Pickup</a>
+  </nav>
+
+</header>
+
+  <main class="feedback-wrap">
+    <h1 data-sw="Tungependa kusikia kutoka kwako">We'd love to hear from you</h1>
+    <p class="feedback-intro" data-sw="Tuambie kuhusu uzoefu wako, toa pendekezo, au utujulishe kama kuna tatizo. Acha namba yako ya simu nasi tutawasiliana nawe.">
+      Tell us about your experience, share a suggestion, or let us know if something went wrong.
+      Leave your phone number and we'll get back to you.
+    </p>
+
+    <form class="feedback-form" action="https://formspree.io/f/your-form-id" method="POST">
+      <div class="field">
+        <label for="name" data-sw="Jina lako">Your name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div class="field">
+        <label for="phone" data-sw="Namba ya simu">Phone number</label>
+        <input type="tel" id="phone" name="phone" placeholder="+254 7XX XXX XXX" required>
+      </div>
+
+      <div class="field">
+        <label for="type" data-sw="Ni kuhusu nini?">What is this about?</label>
+        <select id="type" name="type" required>
+          <option value="Feedback" data-sw="Maoni">Feedback</option>
+          <option value="Complaint" data-sw="Malalamiko">Complaint</option>
+          <option value="Compliment" data-sw="Pongezi">Compliment</option>
+          <option value="Suggestion" data-sw="Pendekezo">Suggestion</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="message" data-sw="Ujumbe wako">Your message</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn" data-sw="Tuma Maoni">Send Feedback</button>
+    </form>
+
+    <p class="note" data-sw="Maelezo yako yatatumika tu kukufikia kuhusu ujumbe huu.">Your details are only used to contact you about this message.</p>
+  </main>
+
+  <script src="header.js"></script>
+</body>
+</html>

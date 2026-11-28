@@ -1,367 +1,1499 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Widetrench | Websites for small businesses in Kenya</title>
-<meta name="description" content="Widetrench builds clean, affordable websites for small businesses in Kenya. First month of maintenance and social media promotion free.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{--navy:#0c1224;--navy2:#151d38;--gold:#c9a96a;--gold2:#e6d3a3;--ivory:#f6f1e7;--ink:#14192b;color-scheme:dark}
-*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
-html{scroll-behavior:smooth;scroll-padding-top:76px;overflow-x:clip}
-body{font-family:Figtree,system-ui,sans-serif;font-size:17px;line-height:1.65;background:var(--navy);color:var(--ivory);overflow-x:clip}
-h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.05;letter-spacing:-.01em}
-a{color:inherit}
-:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
-a:focus:not(:focus-visible),button:focus:not(:focus-visible){outline:none}
-.wrap{width:min(1120px,100% - 44px);margin-inline:auto}
-section{padding:104px 0;position:relative}
-.dark{--fg:var(--ivory);--mut:#a9b0c6;--line:rgba(201,169,106,.28);background:var(--navy);color:var(--fg)}
-.light{--fg:var(--ink);--mut:#5a6078;--line:rgba(20,25,43,.16);background:var(--ivory);color:var(--fg)}
-h2{font-size:clamp(2.2rem,6vw,3.6rem);max-width:16ch}
-.lead{color:var(--mut);max-width:54ch;margin-top:18px}
-.light .gold{color:#8a6d2f}
-.btn{display:inline-block;padding:14px 28px;font:600 .95rem Figtree,sans-serif;text-decoration:none;border:1px solid var(--gold);cursor:pointer;position:relative;overflow:hidden;transition:color .35s,background .35s,transform .35s}
-.btn.gold{background:var(--gold);color:var(--navy)}
-.btn.gold:hover{background:var(--gold2);transform:translateY(-2px)}
-.btn.line{color:var(--ivory)}
-.btn.line:hover{background:var(--gold);color:var(--navy);transform:translateY(-2px)}
-.btn.ink{background:var(--navy);color:var(--ivory);border-color:var(--navy)}
-.btn.ink:hover{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Breeze Lux</title>
 
-/* reveal */
-.rv{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.7,.2,1) var(--d,0s),transform .9s cubic-bezier(.2,.7,.2,1) var(--d,0s)}
-.rv.in{opacity:1;transform:none}
+  <style>
+    :root {
+      --bg: #574d50;
+      --white: #ffffff;
+      --text-dark: #3a3335;
+      --aqua: #7fd8d0;
+      --navy: #0b2545;
+    }
 
-/* nav */
-header.nav{position:fixed;inset:0 0 auto;z-index:20;transition:border-color .4s;border-bottom:1px solid transparent}
-header.nav::before{content:"";position:absolute;inset:0;z-index:-2;background:rgba(12,18,36,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);opacity:0;transition:opacity .4s}
-header.nav.s::before{opacity:1}
-header.nav.s{border-color:var(--line)}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:78px;transition:height .4s}
-.nav.s .wrap{height:64px}
-.logo{position:relative;z-index:2;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;display:flex;align-items:center;gap:12px;font:600 1.7rem 'Cormorant Garamond',serif;text-decoration:none;letter-spacing:.02em}
-.logo i{display:grid;grid-template-columns:1fr 1fr;gap:2px;width:20px;height:20px}
-.logo i b{background:var(--gold)}.logo i b:nth-child(2),.logo i b:nth-child(3){opacity:.45}
-.menu{display:flex;align-items:center;gap:34px}
-.menu a:not(.btn){text-decoration:none;font-size:.95rem;position:relative;padding:6px 0;color:#d6d9e6}
-.menu a:not(.btn)::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .4s}
-.menu a:not(.btn):hover::after{transform:scaleX(1)}
-.menu .btn{padding:10px 20px}
-.burger{z-index:2;display:none;width:44px;height:44px;background:none;border:0;cursor:pointer;position:relative}
-.burger span{position:absolute;left:10px;right:10px;height:1.5px;background:var(--ivory);transition:transform .4s,opacity .3s,top .4s}
-.burger span:nth-child(1){top:16px}.burger span:nth-child(2){top:22px}.burger span:nth-child(3){top:28px}
-.burger[aria-expanded=true] span:nth-child(1){top:22px;transform:rotate(45deg)}
-.burger[aria-expanded=true] span:nth-child(2){opacity:0}
-.burger[aria-expanded=true] span:nth-child(3){top:22px;transform:rotate(-45deg)}
-@media(max-width:820px){
-  .burger{display:block}
-  .menu{position:fixed;inset:0;background:var(--navy);flex-direction:column;justify-content:center;gap:26px;font-size:1.4rem;opacity:0;visibility:hidden;transition:opacity .45s,visibility .45s;z-index:-1}
-  .menu.open{opacity:1;visibility:visible}
-  .menu a:not(.btn){font:600 2.2rem 'Cormorant Garamond',serif;transform:translateY(16px);opacity:0;transition:transform .6s,opacity .6s}
-  .menu.open a:not(.btn){transform:none;opacity:1}
-  .menu.open a:nth-child(2){transition-delay:.08s}.menu.open a:nth-child(3){transition-delay:.16s}.menu.open a:nth-child(4){transition-delay:.24s}
-}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-/* hero */
-.hero{min-height:100svh;display:flex;align-items:center;padding:130px 0 80px;overflow:clip}
-.hero-bgwrap{position:absolute;inset:0;z-index:0;pointer-events:none}
-.hero-bg{position:sticky;top:0;height:100vh;height:100svh;background:linear-gradient(rgba(12,18,36,.42),rgba(12,18,36,.58)),url('hero.jpg') center/cover no-repeat,var(--navy)}
-.orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.22;background:var(--gold);animation:drift 18s ease-in-out infinite alternate;pointer-events:none}
-.orb.a{width:380px;height:380px;top:-120px;right:-80px}
-.orb.b{width:300px;height:300px;bottom:-100px;left:-90px;opacity:.12;animation-duration:24s}
-@keyframes drift{to{transform:translate(-40px,50px) scale(1.15)}}
-.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;position:relative;z-index:1}
-.hero h1{font-size:clamp(3.2rem,9.5vw,6.6rem)}
-.hero h1 span{display:block;overflow:hidden}
-.hero h1 span b{display:block;font-weight:600;transform:translateY(105%);animation:up 1.1s cubic-bezier(.2,.7,.2,1) forwards}
-.hero h1 span:nth-child(2) b{animation-delay:.12s}.hero h1 span:nth-child(3) b{animation-delay:.24s}
-@keyframes up{to{transform:none}}
-.hero p{color:var(--mut);font-size:1.15rem;max-width:42ch;margin:28px 0 36px}
-.hero .fade{opacity:0;animation:fi 1s .6s forwards}
-@keyframes fi{to{opacity:1}}
-.cta{display:flex;flex-wrap:wrap;gap:14px}
-.mosaic{display:grid;grid-template-columns:repeat(8,1fr);gap:5px;aspect-ratio:8/7;will-change:transform}
-.mosaic span{background:var(--navy2);animation:land .6s both}
-@keyframes land{from{opacity:0;transform:scale(.3)}to{opacity:1;transform:none}}
-@media(max-width:860px){.hero .wrap{grid-template-columns:1fr}.mosaic{max-width:380px}}
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: var(--bg);
+      color: var(--white);
+      font-family: Arial, sans-serif;
+    }
 
-/* problem */
-.split{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px}
-@media(max-width:860px){.split{grid-template-columns:1fr;gap:36px}section{padding:80px 0}}
-.facts div{padding:22px 0;border-top:1px solid var(--line)}
-.facts h3{font-size:1.7rem;margin-bottom:6px}
-.facts p{color:var(--mut)}
+    /* ---------- Top utility bar ---------- */
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.9rem 1.25rem;
+    }
 
-/* services */
-.rows{margin-top:56px}
-.row{display:grid;grid-template-columns:90px 1fr 1.2fr;gap:32px;align-items:center;padding:34px 0;border-top:1px solid var(--line);transition:padding .5s,background .5s}
-.row:last-child{border-bottom:1px solid var(--line)}
-.row:hover{padding-left:20px;background:linear-gradient(90deg,rgba(201,169,106,.09),transparent)}
-.row svg{width:44px;height:44px;fill:none;stroke:var(--gold);stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .5s}
-.row:hover svg{transform:scale(1.12) rotate(-4deg)}
-.row h3{font-size:2rem}
-.row p{color:var(--mut)}
-.row:nth-child(even){grid-template-columns:1.2fr 1fr 90px}
-.row:nth-child(even) svg{order:3;justify-self:end}
-.row:nth-child(even) p{order:1}.row:nth-child(even) h3{order:2}
-@media(max-width:820px){.row,.row:nth-child(even){grid-template-columns:56px 1fr;gap:6px 18px}.row p,.row:nth-child(even) p{grid-column:2;order:0}.row:nth-child(even) svg{order:0;justify-self:start}.row:nth-child(even) h3{order:0}.row svg{grid-row:span 2}}
+    .top-contact {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
 
-/* samples */
-.samples{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:28px;margin-top:52px}
-.site{background:#fff;border:1px solid var(--line);transition:transform .5s,box-shadow .5s}
-.site:hover{transform:translateY(-8px);box-shadow:0 24px 50px -24px rgba(12,18,36,.45)}
-.site .bar{display:flex;gap:6px;padding:11px 14px;background:var(--navy)}
-.site .bar i{width:8px;height:8px;border-radius:50%;background:var(--gold);opacity:.6}
-.site .screen{padding:22px;min-height:200px;color:var(--ink)}
-.site h3{font-size:1.6rem}
-.site .ln{height:7px;background:#e4dfd2;margin-top:11px}.site .ln.s{width:58%}
-.site .chip{display:inline-block;margin-top:18px;padding:8px 16px;font-size:.8rem;font-weight:600;background:var(--navy);color:var(--gold2)}
-.site .gal{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:16px}
-.site .gal b{aspect-ratio:1;transition:transform .5s;overflow:hidden}
-.site .gal img{width:100%;height:100%;object-fit:cover;display:block}
-.site:hover .gal b:nth-child(2){transform:translateY(-4px)}
-.site p.cap{padding:14px 22px;border-top:1px solid var(--line);color:var(--mut);font-size:.9rem}
+    .top-contact svg {
+      width: 26px;
+      height: 26px;
+      stroke: var(--white);
+      fill: none;
+      stroke-width: 1.5;
+    }
 
-/* steps */
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:36px;margin-top:56px}
-.step{border-top:1px solid var(--gold);padding-top:22px}
-.step em{font:600 3.4rem/1 'Cormorant Garamond',serif;color:var(--gold);font-style:normal}
-.step h3{font-size:1.7rem;margin:10px 0 8px}
-.step p{color:var(--mut)}
+    .top-contact:hover,
+    .top-contact:active {
+      color: var(--aqua);
+    }
 
-/* pricing */
-.free{margin-top:36px;padding:20px 26px;background:var(--gold);color:var(--navy);font-weight:600}
-.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:26px;margin-top:26px}
-.plan{padding:38px;border:1px solid var(--line)}
-.plan.feat{background:var(--navy);color:var(--ivory);border-color:var(--navy);--mut:#a9b0c6}
-.plan h3{font-size:2rem}
-.price{font:600 2.3rem 'Cormorant Garamond',serif;margin:10px 0 2px;color:#8a6d2f}
-.feat .price{color:var(--gold2)}
-.plan small{color:var(--mut)}
-.plan ul{list-style:none;margin:22px 0 28px}
-.plan li{padding:7px 0 7px 24px;position:relative}
-.plan li::before{content:"";position:absolute;left:0;top:17px;width:10px;height:1px;background:var(--gold);box-shadow:0 0 0 .5px var(--gold)}
-.note{color:var(--mut);font-size:.95rem;margin-top:26px;max-width:70ch}
+    .top-contact:hover svg,
+    .top-contact:active svg {
+      stroke: var(--aqua);
+    }
 
-/* about */
-.about .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:start}
-@media(max-width:860px){.about .wrap{grid-template-columns:1fr;gap:28px}}
-.about .txt{border-left:1px solid var(--gold);padding-left:32px}
-.about p{color:var(--mut);font-size:1.12rem}
-.about p+p{margin-top:18px}
-.about strong{color:var(--ivory);font-weight:500}
+    .contact-wrap {
+      position: relative;
+    }
 
-/* contact */
-.direct{margin-top:30px;display:grid;gap:12px}
-.direct a{display:block;padding:18px 22px;border:1px solid var(--line);text-decoration:none;font-weight:600;transition:border-color .4s,transform .4s,background .4s}
-.direct a small{display:block;font-weight:400;color:var(--mut)}
-.direct a:hover{border-color:var(--gold);transform:translateX(6px);background:rgba(201,169,106,.1)}
-label{display:block;font-weight:600;font-size:.9rem;margin:20px 0 4px}
-input,textarea{width:100%;padding:12px 0;border:0;border-bottom:1px solid var(--line);background:transparent;color:var(--fg);font:inherit;border-radius:0;transition:border-color .4s}
-input:focus,textarea:focus{outline:0;border-color:var(--gold)}
-textarea{min-height:100px;resize:vertical}
-.err{color:#a8321f;font-size:.9rem;min-height:1.3em;margin-top:8px}
-form .btn{width:100%;margin-top:14px}
-footer{padding:44px 0;border-top:1px solid var(--line);font-size:.92rem;color:var(--mut)}
-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
-@media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation:none!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
-  .rv,.hero .fade{opacity:1;transform:none}.hero h1 span b{transform:none}
-}
-</style>
+    .lang-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 280px;
+    }
+
+    /* ---------- Main bar ---------- */
+    .main-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1.25rem 1rem;
+    }
+
+    .menu-toggle {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .menu-icon {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      cursor: pointer;
+      padding: 0.3rem;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .menu-icon span {
+      display: block;
+      width: 26px;
+      height: 2px;
+      background: var(--white);
+    }
+
+    .menu-icon:hover span,
+    .menu-icon:active span {
+      background: var(--aqua);
+    }
+
+    .logo {
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--white);
+      text-decoration: none;
+      margin-left: -60px;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .main-icons {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .icon-btn {
+      display: block;
+      width: 28px;
+      height: 28px;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .icon-btn svg {
+      width: 100%;
+      height: 100%;
+      stroke: var(--white);
+      fill: none;
+      stroke-width: 1.8;
+    }
+
+    .icon-btn:hover svg,
+    .icon-btn:active svg {
+      stroke: var(--aqua);
+    }
+
+    /* ---------- Custom language dropdown ---------- */
+    .lang-trigger {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      width: 100%;
+      padding: 0.6rem 0.9rem;
+      background: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      border-radius: 8px;
+      color: var(--text-dark);
+      font-size: 0.95rem;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .lang-icon,
+    .lang-arrow {
+      flex-shrink: 0;
+      stroke: var(--text-dark);
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .lang-icon {
+      width: 22px;
+      height: 22px;
+    }
+
+    .lang-arrow {
+      width: 18px;
+      height: 18px;
+    }
+
+    .lang-trigger .lang-current {
+      flex: 1;
+    }
+
+    .lang-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 0.5rem);
+      left: 0;
+      right: 0;
+      background: var(--white);
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      overflow: hidden;
+      z-index: 200;
+    }
+
+    .lang-menu a {
+      display: block;
+      padding: 0.85rem 1rem;
+      color: var(--text-dark);
+      font-size: 0.95rem;
+      text-decoration: none;
+      border-bottom: 1px solid #ececec;
+    }
+
+    .lang-menu a:last-child {
+      border-bottom: none;
+    }
+
+    .lang-menu a:hover,
+    .lang-menu a:active {
+      background: #eaf8f6;
+    }
+
+    .lang-wrap:has(.menu-toggle:checked) .lang-menu {
+      display: block;
+    }
+
+    /* ---------- Contact dropdown ---------- */
+    .contact-menu {
+      display: block;
+      position: absolute;
+      top: calc(100% + 0.6rem);
+      left: 0;
+      min-width: 200px;
+      background: var(--white);
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      overflow: hidden;
+      z-index: 200;
+    }
+
+    .contact-menu a {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      padding: 0.9rem 1.2rem;
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      text-decoration: none;
+      border-bottom: 1px solid #ececec;
+    }
+
+    .contact-menu a:last-child {
+      border-bottom: none;
+    }
+
+    .contact-menu a:hover,
+    .contact-menu a:active {
+      background: #eaf8f6;
+      color: var(--bg);
+    }
+
+    .contact-menu svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--bg);
+      flex-shrink: 0;
+    }
+
+    /* Paper-unroll animation for the Contact and Language windows */
+    .contact-menu,
+    .lang-menu {
+      display: block;
+      opacity: 0;
+      visibility: hidden;
+      clip-path: polygon(45% 0%, 55% 0%, 55% 0%, 45% 0%);
+      transform: perspective(700px) rotateX(-22deg) translateY(-14px) scale(0.94);
+      transform-origin: top center;
+      transition:
+        clip-path 0.7s cubic-bezier(0.34, 1.56, 0.64, 1),
+        transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1),
+        opacity 0.35s ease,
+        visibility 0s linear 0.7s;
+    }
+
+    .contact-menu {
+      transform-origin: top left;
+    }
+
+    .contact-wrap .menu-toggle:checked ~ .contact-menu,
+    .lang-wrap .menu-toggle:checked ~ .lang-menu {
+      opacity: 1;
+      visibility: visible;
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+      transform: perspective(700px) rotateX(0deg) translateY(0) scale(1);
+      transition:
+        clip-path 0.7s cubic-bezier(0.34, 1.56, 0.64, 1),
+        transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1),
+        opacity 0.35s ease,
+        visibility 0s;
+    }
+
+    .contact-menu a,
+    .lang-menu a {
+      opacity: 0;
+      transform: translateY(-6px);
+      transition: opacity 0.2s ease, transform 0.3s ease;
+    }
+
+    .contact-wrap .menu-toggle:checked ~ .contact-menu a,
+    .lang-wrap .menu-toggle:checked ~ .lang-menu a {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.4s ease 0.2s, transform 0.5s cubic-bezier(0.32, 0.72, 0, 1) 0.2s;
+    }
+
+    /* ---------- Left slide-in drawer, below the header ---------- */
+    .mobile-menu {
+      display: block;
+      position: fixed;
+      top: 110px;
+      left: 0;
+      bottom: 0;
+      width: 80%;
+      max-width: 320px;
+      height: calc(100vh - 110px);
+      height: calc(100dvh - 110px);
+      padding: 1.5rem 1.5rem 2rem;
+      background: var(--bg);
+      border-right: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 8px 0 30px rgba(0, 0, 0, 0.3);
+      transform: translateX(-100%);
+      transition: transform 0.35s ease;
+      overflow-y: auto;
+      z-index: 50;
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: 0.8rem 0;
+      color: var(--white);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .mobile-menu a:hover,
+    .mobile-menu a:active {
+      color: var(--aqua);
+    }
+
+    .mobile-menu .mobile-book {
+      margin-top: 1rem;
+      text-align: center;
+      background: var(--aqua);
+      color: var(--navy);
+      border-radius: 999px;
+      border-bottom: none;
+      font-weight: 600;
+    }
+
+    .menu-toggle:checked ~ .mobile-menu {
+      transform: translateX(0);
+    }
+
+    #search-toggle:checked ~ .mobile-menu,
+    #account-toggle:checked ~ .mobile-menu,
+    #contact-toggle:checked ~ .mobile-menu,
+    #lang-toggle:checked ~ .mobile-menu {
+      transform: translateX(-100%);
+    }
+
+    /* ---------- Search box ---------- */
+    .search-panel,
+    .account-panel {
+      display: none;
+      padding: 0 1.25rem 1.2rem;
+    }
+
+    .search-panel {
+      display: block;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      padding: 0.6rem 1.25rem 0.4rem;
+      visibility: hidden;
+      transition: visibility 0s linear 0.7s;
+    }
+
+    #search-toggle:checked ~ .search-panel {
+      visibility: visible;
+      transition: visibility 0s;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border: none;
+      border-radius: 8px;
+      background: var(--white);
+      color: var(--text-dark);
+      font-size: 1rem;
+      outline: none;
+      transform-origin: calc(100% - 14px) 50%;
+      transform: scaleX(0);
+      opacity: 0;
+      transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.2s ease;
+    }
+
+    #search-toggle:checked ~ .search-panel .search-input {
+      transform: scaleX(1);
+      opacity: 1;
+    }
+
+    .search-input:focus {
+      box-shadow: 0 0 0 2px var(--aqua);
+    }
+
+    /* ---------- Account panel ---------- */
+    #account-toggle:checked ~ .account-panel {
+      display: block;
+    }
+
+    .account-panel {
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .account-title {
+      font-size: 1rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .account-btn {
+      display: block;
+      text-align: center;
+      padding: 0.75rem;
+      margin-bottom: 0.6rem;
+      border: 1px solid var(--white);
+      border-radius: 999px;
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .account-btn:hover {
+      background: var(--white);
+      color: var(--navy);
+    }
+
+    .account-primary {
+      background: var(--aqua);
+      border-color: var(--aqua);
+      color: var(--navy);
+      font-weight: 600;
+    }
+
+    .account-link {
+      display: inline-block;
+      margin-top: 0.4rem;
+      color: var(--aqua);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    /* ---------- Desktop ---------- */
+    @media (min-width: 768px) {
+      .top-bar {
+        padding: 0.9rem 2.5rem;
+      }
+
+      .main-bar {
+        padding: 0 2.5rem 1rem;
+      }
+
+      .lang-wrap {
+        max-width: 320px;
+      }
+
+      .menu-icon {
+        display: none;
+      }
+
+      .mobile-menu {
+        display: none !important;
+      }
+
+      .search-panel,
+      .account-panel {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+      }
+    }
+
+    section[id] {
+      scroll-margin-top: 90px;
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 9rem 1.25rem 4rem;
+      overflow: hidden;
+      background: var(--navy);
+      color: var(--white);
+      font-family: Arial, sans-serif;
+    }
+
+    .hero-photo {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(11, 37, 69, 0.7);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 760px;
+    }
+
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--aqua);
+      margin-bottom: 1.2rem;
+    }
+
+    .hero h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.2rem, 6vw, 3.8rem);
+      line-height: 1.15;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      opacity: 0.9;
+      max-width: 560px;
+      margin: 0 auto 2.2rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+      align-items: center;
+    }
+
+    .hero-btn {
+      display: block;
+      width: 100%;
+      max-width: 280px;
+      padding: 0.95rem 1.8rem;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: transform 0.2s, background 0.2s, color 0.2s;
+    }
+
+    .hero-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .hero-btn-primary {
+      background: var(--aqua);
+      color: var(--navy);
+    }
+
+    .hero-btn-primary:hover {
+      background: var(--white);
+    }
+
+    .hero-btn-outline {
+      border: 1.5px solid var(--white);
+      color: var(--white);
+    }
+
+    .hero-btn-outline:hover {
+      background: var(--white);
+      color: var(--navy);
+    }
+
+    @media (min-width: 768px) {
+      .hero-buttons {
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      .hero-btn {
+        width: auto;
+      }
+    }
+
+    /* Hero entrance animation */
+    @keyframes heroRise {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-eyebrow,
+    .hero h1,
+    .hero-subtitle,
+    .hero-buttons {
+      opacity: 0;
+      animation: heroRise 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
+
+    .hero-eyebrow {
+      animation-delay: 0.2s;
+    }
+
+    .hero h1 {
+      animation-delay: 0.45s;
+    }
+
+    .hero-subtitle {
+      animation-delay: 0.7s;
+    }
+
+    .hero-buttons {
+      animation-delay: 0.95s;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-eyebrow,
+      .hero h1,
+      .hero-subtitle,
+      .hero-buttons {
+        animation: none;
+        opacity: 1;
+      }
+
+      .contact-menu,
+      .lang-menu,
+      .contact-menu a,
+      .lang-menu a {
+        transition: none;
+      }
+    }
+
+    /* ---------- FAQ ---------- */
+    .faq {
+      background: #f4f1f2;
+      padding: 4rem 1.25rem;
+      font-family: Arial, sans-serif;
+      color: var(--text-dark);
+    }
+
+    .faq-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .faq-eyebrow {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #13677a;
+      margin-bottom: 0.6rem;
+    }
+
+    .faq h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      color: var(--navy);
+      margin-bottom: 2rem;
+    }
+
+    .faq-item {
+      background: var(--white);
+      border-radius: 10px;
+      margin-bottom: 0.8rem;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+    }
+
+    .faq-item summary {
+      padding: 1.1rem 3rem 1.1rem 1.25rem;
+      font-weight: 600;
+      color: var(--navy);
+      cursor: pointer;
+      list-style: none;
+      position: relative;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: "+";
+      position: absolute;
+      right: 1.25rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: #13677a;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item[open] summary::after {
+      transform: translateY(-50%) rotate(45deg);
+    }
+
+    .faq-item p {
+      padding: 0 1.25rem 1.2rem;
+      line-height: 1.6;
+      color: #6b6265;
+    }
+
+    .faq-item[open] p {
+      animation: faqOpen 0.4s ease;
+    }
+
+    @keyframes faqOpen {
+      from {
+        opacity: 0;
+        transform: translateY(-6px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ---------- Services ---------- */
+    .services {
+      padding: 5rem 1.25rem;
+      background: #fff;
+      color: var(--text-dark);
+      font-family: Arial, sans-serif;
+    }
+
+    .services-wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .services-heading {
+      max-width: 650px;
+      margin: 0 auto 2.5rem;
+      text-align: center;
+    }
+
+    .services-eyebrow {
+      display: block;
+      margin-bottom: 0.7rem;
+      color: #13677a;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .services h2 {
+      margin-bottom: 0.9rem;
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.9rem, 4vw, 2.7rem);
+    }
+
+    .services-intro {
+      color: #6b6265;
+      line-height: 1.7;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+    }
+
+    .service-card {
+      overflow: hidden;
+      border-radius: 16px;
+      background: #f7f5f6;
+      box-shadow: 0 8px 24px rgba(11, 37, 69, 0.08);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 32px rgba(11, 37, 69, 0.13);
+    }
+
+    .service-card img {
+      display: block;
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      object-position: 50% 100%;
+      background: #e8e3e5;
+    }
+
+    .service-card-content {
+      padding: 1.35rem;
+    }
+
+    .service-card h3 {
+      margin-bottom: 0.65rem;
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.3rem;
+    }
+
+    .service-card p {
+      margin-bottom: 1.1rem;
+      color: #6b6265;
+      line-height: 1.65;
+      font-size: 0.96rem;
+    }
+
+    .service-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: #13677a;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .service-link:hover {
+      color: var(--navy);
+      text-decoration: underline;
+    }
+
+    @media (min-width: 620px) {
+      .service-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.4rem;
+      }
+    }
+
+    @media (min-width: 960px) {
+      .services {
+        padding: 6rem 2rem;
+      }
+
+      .service-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1.2rem;
+      }
+
+      .service-card img {
+        height: 260px;
+      }
+
+      .service-card-content {
+        padding: 1.2rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .service-card {
+        transition: none;
+      }
+    }
+    /* ---------- Top bar slides away on scroll down, returns on scroll up ---------- */
+    .top-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      transition: transform 0.4s ease;
+    }
+
+    .main-bar {
+      padding-top: 5rem;
+      transition: padding-top 0.4s ease;
+    }
+
+    .site-header.top-hidden .top-bar {
+      transform: translateY(-100%);
+    }
+
+    .site-header.top-hidden .main-bar {
+      padding-top: 0.9rem;
+    }
+
+    .site-header.top-hidden .mobile-menu {
+      top: 84px;
+      height: calc(100vh - 84px);
+      height: calc(100dvh - 84px);
+    }
+
+    @media (min-width: 768px) {
+      .site-header.top-hidden .main-bar {
+        padding-top: 0.9rem;
+      }
+    }
+    /* ---------- Drawer always starts directly under the header, whatever its height ---------- */
+    .mobile-menu,
+    .site-header.top-hidden .mobile-menu {
+      position: absolute;
+      top: 100%;
+      bottom: auto;
+      height: 100vh;
+      height: 100dvh;
+    }
+    /* ---------- Search results ---------- */
+    .search-results {
+      margin-top: 0.6rem;
+      background: var(--white);
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      max-height: 60vh;
+      overflow-y: auto;
+    }
+
+    .search-results:empty {
+      display: none;
+    }
+
+    .search-result {
+      display: block;
+      padding: 0.8rem 1rem;
+      border-bottom: 1px solid #ececec;
+      color: var(--text-dark);
+      text-decoration: none;
+    }
+
+    .search-result:last-child {
+      border-bottom: none;
+    }
+
+    .search-result:hover,
+    .search-result:active {
+      background: #eaf8f6;
+    }
+
+    .search-result strong {
+      display: block;
+      color: var(--navy);
+      font-size: 0.95rem;
+    }
+
+    .search-result span {
+      display: block;
+      margin-top: 0.2rem;
+      color: #6b6265;
+      font-size: 0.82rem;
+      line-height: 1.4;
+    }
+
+    .search-empty {
+      margin-top: 0.6rem;
+      padding: 0.9rem 1rem;
+      background: var(--white);
+      border-radius: 10px;
+      color: #6b6265;
+      font-size: 0.9rem;
+    }
+  </style>
+  <link rel="stylesheet" href="header.css">
 </head>
 <body>
 
-<header class="nav" id="nav">
-  <div class="wrap">
-    <a class="logo" href="#top"><i aria-hidden="true"><b></b><b></b><b></b><b></b></i>Widetrench</a>
-    <button class="burger" id="bg" aria-label="Menu" aria-expanded="false" aria-controls="mn"><span></span><span></span><span></span></button>
-    <nav class="menu" id="mn" aria-label="Main">
-      <a href="#samples">Samples</a><a href="#pricing">Pricing</a><a href="#about">About</a>
-      <a class="btn gold" href="https://wa.me/254757711537" target="_blank" rel="noopener">Message us</a>
+  <header class="site-header">
+
+    <div class="top-bar">
+      <div class="contact-wrap">
+        <input type="checkbox" id="contact-toggle" class="menu-toggle">
+        <label for="contact-toggle" class="top-contact">
+          <svg viewBox="0 0 24 24">
+            <rect x="2" y="5" width="20" height="14" rx="2"/>
+            <polyline points="2,6 12,13 22,6"/>
+          </svg>
+          <span data-sw="Wasiliana">Contact</span>
+        </label>
+
+        <div class="contact-menu">
+          <a href="https://wa.me/254758966762" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/>
+              <path d="M8.5 9.5c.3 2 2 4.2 4.2 5.2l1.3-1.3 1.8.8-.6 1.6c-.3.6-1 .8-1.6.6-3.2-1-5.8-3.6-6.4-6.8-.2-.6 0-1.3.6-1.6l1.6-.6.8 1.8-1.7 1.3z"/>
+            </svg>
+            WhatsApp
+          </a>
+          <a href="tg://resolve?phone=254758966762">
+            <svg viewBox="0 0 24 24">
+              <path d="M21.5 4.5L2.8 11.7c-.8.3-.8 1.1 0 1.4l4.6 1.4 1.8 5.5c.2.6.9.8 1.4.4l2.6-2.1 4.8 3.5c.6.4 1.3.1 1.5-.6L23 5.7c.2-.8-.5-1.4-1.5-1.2z"/>
+            </svg>
+            Telegram
+          </a>
+          <a href="https://www.facebook.com/yourpage" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24">
+              <path d="M14 8V6c0-.8.4-1.2 1.2-1.2H17V2h-2.8C11.4 2 10 3.5 10 6v2H8v3h2v11h4V11h2.6l.4-3H14z"/>
+            </svg>
+            Facebook
+          </a>
+          <a href="mailto:franklinmutunga4@gmail.com">
+            <svg viewBox="0 0 24 24">
+              <path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/>
+            </svg>
+            <span data-sw="Barua pepe">Email</span>
+          </a>
+          <a href="tel:+254758966762">
+            <svg viewBox="0 0 24 24">
+              <path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
+            </svg>
+            <span data-sw="Piga Simu">Call Us</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="lang-wrap">
+        <input type="checkbox" id="lang-toggle" class="menu-toggle">
+        <label for="lang-toggle" class="lang-trigger">
+          <svg class="lang-icon" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"/>
+            <ellipse cx="12" cy="12" rx="4" ry="10"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+          </svg>
+          <span class="lang-current">English (UK)</span>
+          <svg class="lang-arrow" viewBox="0 0 24 24">
+            <polyline points="6,9 12,15 18,9"/>
+          </svg>
+        </label>
+
+        <div class="lang-menu">
+          <a href="#" data-lang="English (UK)">English (UK)</a>
+          <a href="#" data-lang="English (US)">English (US)</a>
+          <a href="#" data-lang="Swahili">Swahili</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-bar">
+      <label for="menu-toggle" class="menu-icon" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <a href="#home" class="logo">Breeze Lux</a>
+
+      <div class="main-icons">
+        <label for="search-toggle" class="icon-btn" aria-label="Search">
+          <svg viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="7"/>
+            <line x1="16.5" y1="16.5" x2="22" y2="22"/>
+          </svg>
+        </label>
+        <label for="account-toggle" class="icon-btn" aria-label="Account">
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/>
+          </svg>
+        </label>
+      </div>
+    </div>
+
+    <input type="checkbox" id="search-toggle" class="menu-toggle">
+    <div class="search-panel">
+      <input type="search" class="search-input" placeholder="Search services, prices, FAQs..." data-sw-placeholder="Tafuta huduma, bei, maswali..." aria-label="Search">
+    </div>
+
+    <input type="checkbox" id="account-toggle" class="menu-toggle">
+    <div class="account-panel">
+      <p class="account-title" data-sw="Karibu Breeze Lux">Welcome to Breeze Lux</p>
+      <a href="#account" class="account-btn account-primary" data-sw="Ingia">Log In</a>
+      <a href="#account" class="account-btn" data-sw="Fungua Akaunti">Create Account</a>
+      <a href="#orders" class="account-link" data-sw="Fuatilia Oda Yako">Track an Order</a>
+    </div>
+
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <nav class="mobile-menu">
+      <a href="#home" data-sw="Nyumbani">Home</a>
+      <a href="#services" data-sw="Huduma">Services</a>
+      <a href="#pricing" data-sw="Bei">Pricing</a>
+      <a href="how-it-works.html" data-sw="Jinsi Inavyofanya Kazi">How It Works</a>
+      <a href="#reviews" data-sw="Maoni">Reviews</a>
+      <a href="#faq" data-sw="Maswali">FAQ</a>
+      <a href="feedback.html" data-sw="Maoni na Malalamiko">Feedback</a>
+      <a href="booking.html" class="mobile-book" data-sw="Omba Kuchukuliwa">Book a Pickup</a>
     </nav>
-  </div>
-</header>
 
-<header class="hero dark" id="top" style="position:relative">
-  <div class="hero-bgwrap" aria-hidden="true"><div class="hero-bg"></div></div>
-  <div class="orb a" aria-hidden="true"></div><div class="orb b" aria-hidden="true"></div>
-  <div class="wrap">
-    <div>
-      <h1><span><b>Help your</b></span><span><b>customers</b></span><span><b>reach you.</b></span></h1>
-      <p class="fade">Widetrench builds clean, fast websites for small businesses in Kenya, at prices that make sense. Your first month of maintenance and social media promotion is free.</p>
-      <div class="cta fade">
-        <a class="btn gold" href="https://wa.me/254757711537?text=Hi%20Widetrench%2C%20I%27d%20like%20a%20website%20for%20my%20business." target="_blank" rel="noopener">Message us on WhatsApp</a>
-        <a class="btn line" href="#pricing">See pricing</a>
+  </header>
+
+  <section id="home" class="hero">
+    <img class="hero-photo" src="hero.jpg" alt="Luxury folded laundry">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <span class="hero-eyebrow" data-sw="Usafishaji wa Nguo wa Hali ya Juu na Kusafisha Kikavu">Premium Laundry &amp; Dry Cleaning</span>
+      <h1 data-sw="Nguo Safi, Nyumba Safi, Zinakurudia Ndani ya Saa 24">Fresh Clothes, Spotless Spaces, Back to You in 24 Hours</h1>
+      <p class="hero-subtitle" data-sw="Huduma bora kwa kila kitambaa, pamoja na kuchukua na kurudisha bure ndani ya jiji.">
+        Expert care for every fabric, with free pickup and delivery across the city.
+      </p>
+      <div class="hero-buttons">
+        <a href="booking.html" class="hero-btn hero-btn-primary" data-sw="Omba Kuchukuliwa">Book a Pickup</a>
+        <a href="#pricing" class="hero-btn hero-btn-outline" data-sw="Angalia Bei">See Prices</a>
       </div>
     </div>
-    <div class="mosaic" id="mosaic" data-p="-.06" aria-hidden="true"></div>
-  </div>
-</header>
+  </section>
 
-<section class="light">
-  <div class="wrap split">
-    <h2 class="rv">Customers can’t buy from a business they can’t find.</h2>
-    <div class="facts">
-      <div class="rv"><h3>Hard to reach</h3><p>When your number and prices live in scattered posts, customers give up and call someone else.</p></div>
-      <div class="rv" style="--d:.12s"><h3>Hard to trust</h3><p>A real website shows people that your business is open, serious, and easy to deal with.</p></div>
-      <div class="rv" style="--d:.24s"><h3>Hard to find</h3><p>People search on their phones first. If you’re not there, a competitor is.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="dark" id="offer">
-  <div class="wrap">
-    <h2 class="rv">A website that does its job.</h2>
-    <p class="lead rv">Every Widetrench site is built by hand, piece by piece, to fit your business.</p>
-    <div class="rows">
-      <div class="row rv"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg><h3>Made for phones</h3><p>Most of your customers browse on a phone, so every page is designed for small screens first.</p></div>
-      <div class="row rv"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></svg><h3>One-tap contact</h3><p>Call and WhatsApp buttons on every page, so customers reach you in seconds.</p></div>
-      <div class="row rv"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="M16 16l5 5"/></svg><h3>Ready for Google</h3><p>Clear titles and descriptions, so your business has a fair chance of being found in search.</p></div>
-      <div class="row rv"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg><h3>Help after launch</h3><p>Your first month includes free maintenance and social media promotion.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="light" id="samples">
-  <div class="wrap">
-    <h2 class="rv">What your site could look like.</h2>
-    <p class="lead rv">Three sample designs for imaginary businesses. Yours will be built around your own logo, colors, and photos.</p>
-    <div class="samples">
-      <div class="site rv">
-        <div class="bar"><i></i><i></i><i></i></div>
-        <div class="screen"><h3>Zuri Beauty Salon</h3><div class="ln"></div><div class="ln s"></div><span class="chip">Book on WhatsApp</span>
-          <div class="gal"><b style="background:#c9a96a"><img src="zuri-1.jpg" alt="" loading="lazy" onerror="this.remove()"></b><b style="background:#0c1224"><img src="zuri-2.jpg" alt="" loading="lazy" onerror="this.remove()"></b><b style="background:#e4dfd2"><img src="zuri-3.jpg" alt="" loading="lazy" onerror="this.remove()"></b></div></div>
-        <p class="cap">Salon: services, prices, and a booking button.</p>
+  <section id="services" class="services">
+    <div class="services-wrap">
+      <div class="services-heading">
+        <span class="services-eyebrow" data-sw="Tunachofanya">What we do</span>
+        <h2 data-sw="Huduma Bora kwa Kila Kitambaa">Care for Every Fabric</h2>
+        <p class="services-intro" data-sw="Kuanzia nguo za kila siku hadi nguo maridadi, Breeze Lux inarahisisha utunzaji wa nguo kwa kuchukua na kurudisha kwa urahisi.">
+          From everyday laundry to delicate garments, Breeze Lux makes clothing care
+          easier with convenient collection and delivery.
+        </p>
       </div>
-      <div class="site rv" style="--d:.12s">
-        <div class="bar"><i></i><i></i><i></i></div>
-        <div class="screen"><h3>Mama Pendo Kitchen</h3><div class="ln"></div><div class="ln s"></div><span class="chip">Order by phone</span>
-          <div class="gal"><b style="background:#0c1224"><img src="pendo-1.jpg" alt="" loading="lazy" onerror="this.remove()"></b><b style="background:#e6d3a3"><img src="pendo-2.jpg" alt="" loading="lazy" onerror="this.remove()"></b><b style="background:#8a6d2f"><img src="pendo-3.jpg" alt="" loading="lazy" onerror="this.remove()"></b></div></div>
-        <p class="cap">Restaurant: menu, opening hours, and location.</p>
-      </div>
-      <div class="site rv" style="--d:.24s">
-        <div class="bar"><i></i><i></i><i></i></div>
-        <div class="screen"><h3>Kito Boutique</h3><div class="ln"></div><div class="ln s"></div><span class="chip">See new arrivals</span>
-          <div class="gal"><b style="background:#e4dfd2"><img src="kito-1.jpg" alt="" loading="lazy" onerror="this.remove()"></b><b style="background:#c9a96a"><img src="kito-2.jpg" alt="" loading="lazy" onerror="this.remove()"></b><b style="background:#151d38"><img src="kito-3.jpg" alt="" loading="lazy" onerror="this.remove()"></b></div></div>
-        <p class="cap">Boutique: product gallery and a way to order.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section class="dark" id="how">
-  <div class="wrap">
-    <h2 class="rv">From first message to live site.</h2>
-    <div class="steps">
-      <div class="step rv"><em>1</em><h3>Tell us about your business</h3><p>Message us on WhatsApp with what you do, your services, and any photos you have.</p></div>
-      <div class="step rv" style="--d:.12s"><em>2</em><h3>We build and show you</h3><p>You see your site, ask for changes, and we adjust until you’re happy.</p></div>
-      <div class="step rv" style="--d:.24s"><em>3</em><h3>Go live and get noticed</h3><p>Your site goes online and we help announce your business on social media.</p></div>
-    </div>
-  </div>
-</section>
+      <div class="service-grid">
+        <article class="service-card">
+          <img src="washing.jpg" alt="Fresh laundry being carefully washed" loading="lazy">
+          <div class="service-card-content">
+            <h3 data-sw="Osha na Kukunja">Wash &amp; Fold</h3>
+            <p data-sw="Nguo za kila siku zilizooshwa, kukaushwa na kukunjwa vizuri, tayari kurudi kabatini kwako.">Everyday clothes washed, dried and neatly folded, ready to go back into your wardrobe.</p>
+            <a class="service-link" href="booking.html"><span data-sw="Omba huduma hii">Book this service</span> <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
 
-<section class="light" id="pricing">
-  <div class="wrap">
-    <h2 class="rv">Simple prices for small budgets.</h2>
-    <div class="free rv">Your first month is on us: free maintenance and social media promotion with every site.</div>
-    <div class="plans">
-      <div class="plan rv">
-        <h3>Starter</h3><div class="price">KES 8,000 to 10,000</div><small>One-page website</small>
-        <ul><li>Your business, services, and prices on one page</li><li>Call and WhatsApp buttons</li><li>Works on every phone</li><li>First month free: maintenance and social media promotion</li></ul>
-        <a class="btn ink" href="https://wa.me/254757711537?text=Hi%20Widetrench%2C%20I%27m%20interested%20in%20the%20Starter%20package." target="_blank" rel="noopener">Ask about Starter</a>
-      </div>
-      <div class="plan feat rv" style="--d:.12s">
-        <h3>Standard</h3><div class="price">KES 15,000 to 20,000</div><small>Up to 5 pages</small>
-        <ul><li>Home, about, services, gallery, and contact</li><li>Contact form and WhatsApp button</li><li>Your logo and colors throughout</li><li>First month free: maintenance and social media promotion</li></ul>
-        <a class="btn gold" href="https://wa.me/254757711537?text=Hi%20Widetrench%2C%20I%27m%20interested%20in%20the%20Standard%20package." target="_blank" rel="noopener">Ask about Standard</a>
+        <article class="service-card">
+          <img src="dry-cleaning.jpg" alt="A carefully cleaned formal garment" loading="lazy">
+          <div class="service-card-content">
+            <h3 data-sw="Kusafisha Kikavu">Dry Cleaning</h3>
+            <p data-sw="Huduma maalum kwa suti, magauni na nguo nyingine zinazohitaji usafishaji mpole zaidi.">Special care for suits, dresses and other garments that need a gentler cleaning process.</p>
+            <a class="service-link" href="booking.html"><span data-sw="Omba huduma hii">Book this service</span> <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <img src="ironing.jpg" alt="A freshly pressed shirt" loading="lazy">
+          <div class="service-card-content">
+            <h3 data-sw="Kupiga Pasi">Ironing &amp; Pressing</h3>
+            <p data-sw="Pata nguo zako zikiwa nadhifu na zenye mwonekano mzuri kwa kupigwa pasi na kumalizia kitaalamu.">Get your clothes looking neat and presentable with professional pressing and finishing.</p>
+            <a class="service-link" href="booking.html"><span data-sw="Omba huduma hii">Book this service</span> <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <img src="bedding.jpg" alt="Clean and neatly arranged bed linen" loading="lazy">
+          <div class="service-card-content">
+            <h3 data-sw="Mashuka na Vitu vya Nyumbani">Bedding &amp; Household</h3>
+            <p data-sw="Onyesha upya vitu kama mashuka, vifuniko vya duvet, blanketi na vitambaa vingine vya nyumbani.">Freshen up items such as bedsheets, duvet covers, blankets and other household fabrics.</p>
+            <a class="service-link" href="booking.html"><span data-sw="Omba huduma hii">Book this service</span> <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
       </div>
     </div>
-    <p class="note rv">The final price depends on what your business needs. A domain name (like yourbusiness.co.ke) and hosting are paid separately and usually cost a few thousand shillings a year. Online shops are coming soon, so ask us if you need one.</p>
-  </div>
-</section>
+  </section>
 
-<section class="dark about" id="about">
-  <div class="wrap">
-    <h2 class="rv">Hi, I’m Franklin.</h2>
-    <div class="txt rv" style="--d:.12s">
-      <p>I’m the founder of Widetrench, based in Nairobi. I started Widetrench after seeing how many businesses struggle to connect with their customers properly. A good website fixes that: customers can find you, see what you offer, and reach you in one tap.</p>
-      <p>I build every site personally, piece by piece, and I don’t disappear after launch. <strong>Tell me about your business, and let’s get your customers talking to you.</strong></p>
+  <section id="faq" class="faq">
+    <div class="faq-wrap">
+      <span class="faq-eyebrow" data-sw="Maswali">Questions</span>
+      <h2 data-sw="Maswali Yanayoulizwa Mara kwa Mara">Frequently Asked Questions</h2>
+
+      <details class="faq-item">
+        <summary data-sw="Inachukua muda gani?">How long does it take?</summary>
+        <p data-sw="Oda nyingi ziko tayari ndani ya saa 24. Kusafisha kikavu na vitu vikubwa vinaweza kuchukua hadi saa 48. Tutathibitisha muda tutakapokuwa unaomba huduma.">Most orders are ready within 24 hours. Dry cleaning and large items may take up to 48 hours. We'll confirm the timing when you book.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary data-sw="Je, mnatoa kuchukua na kurudisha bure?">Do you offer free pickup and delivery?</summary>
+        <p data-sw="Ndiyo. Tunakusanya na kurudisha vitu vyako bila gharama ya ziada ndani ya eneo letu la huduma.">Yes. We collect and return your items at no extra cost within our service area.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary data-sw="Mnahudumia maeneo gani?">Which areas do you cover?</summary>
+        <p data-sw="Kwa sasa tunahudumia maeneo makuu ya Nairobi. Wasiliana nasi kupitia WhatsApp kuangalia kama eneo lako linafikiwa.">We currently serve the main neighbourhoods of Nairobi. Contact us on WhatsApp to check whether your location is covered.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary data-sw="Ninalipaje?">How do I pay?</summary>
+        <p data-sw="Unaweza kulipa kwa M-Pesa, pesa taslimu ukipokea, au kadi. Maelezo ya malipo yatatolewa utakapothibitisha oda yako.">You can pay by M-Pesa, cash on delivery, or card. Payment details are shared when you confirm your booking.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary data-sw="Nisipokuwepo wakati wa kuchukuliwa je?">What if I'm not home at pickup time?</summary>
+        <p data-sw="Acha maelekezo wazi kwa mlinzi au jirani, au tutumie ujumbe ili tupange upya. Daima tutathibitisha kabla ya kuchukua.">Leave clear instructions with the guard or a neighbour, or message us to reschedule. We'll always confirm before collecting.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary data-sw="Mnashughulikia vitambaa maridadi au maalum?">Do you handle delicate or special fabrics?</summary>
+        <p data-sw="Ndiyo. Hariri, sufu, ngozi na nguo zilizopambwa kwa shanga zinapata uangalizi wa kipekee. Taja kitambaa unapoomba huduma ili tukitunze ipasavyo.">Yes. Silk, wool, leather, and beaded pieces get individual care. Mention the fabric when you book so we can treat it properly.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary data-sw="Vipi kama doa halitoki?">What if a stain doesn't come out?</summary>
+        <p data-sw="Tunatibu kila doa kabla ya kufua. Madoa mengine hayawezi kuondolewa kikamilifu, nasi tutakuambia kwa uwazi kabla ya kumaliza.">We treat every stain before washing. Some marks can't be fully removed, and we'll always tell you honestly before we finish.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary data-sw="Vipi kama kitu kimeharibika au kupotea?">What if an item gets damaged or lost?</summary>
+        <p data-sw="Tafadhali tuwasiliane ndani ya saa 48 baada ya kupokea. Tutachunguza na kulitatua, iwe kwa kukarabati au fidia.">Please contact us within 48 hours of delivery. We'll investigate and make it right, whether through repair or compensation.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary data-sw="Naweza kughairi au kubadilisha oda yangu?">Can I cancel or change my booking?</summary>
+        <p data-sw="Ndiyo, unaweza kughairi au kubadilisha oda yako bila malipo hadi saa 2 kabla ya kuchukuliwa.">Yes, you can cancel or change your booking free of charge up to 2 hours before pickup.</p>
+      </details>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="light" id="contact">
-  <div class="wrap split">
-    <div>
-      <h2 class="rv">Let’s talk about your business.</h2>
-      <p class="lead rv">The fastest way to reach us is WhatsApp. You can also send a message here and it will open in WhatsApp for you to send.</p>
-      <div class="direct rv">
-        <a href="https://wa.me/254757711537" target="_blank" rel="noopener"><small>WhatsApp</small>0757 711 537</a>
-        <a href="mailto:franklinmutunga4@gmail.com"><small>Email</small>franklinmutunga4@gmail.com</a>
-      </div>
-    </div>
-    <form id="f" class="rv" style="--d:.12s" novalidate>
-      <label for="n">Your name</label><input id="n" autocomplete="name">
-      <label for="b">Your business</label><input id="b">
-      <label for="m">What do you need?</label><textarea id="m" placeholder="For example: a one-page site for my salon in Kasarani"></textarea>
-      <div class="err" id="e" role="alert"></div>
-      <button class="btn ink" type="submit">Send on WhatsApp</button>
-    </form>
-  </div>
-</section>
+  <section id="book"></section>
 
-<footer class="dark">
-  <div class="wrap">
-    <span>© <span id="y"></span> Widetrench. Websites for small businesses, Nairobi, Kenya.</span>
-    <span>0757 711 537 · franklinmutunga4@gmail.com</span>
-  </div>
-</footer>
+  <footer>© <span id="year"></span> Breeze Lux. All rights reserved.</footer>
 
-<script>
-var rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
-// mosaic: a browser window built from tiles
-(function(){
-  var m=document.getElementById('mosaic'),
-  map=['TTTTTTTT','T......T','T.AA.GG.','T.AA.GG.','T.SSSSS.','T.....KT','TTTTTTTT'],
-  fill={T:'#1d2747',A:'#c9a96a',G:'#e6d3a3',S:'#2a365e',K:'#c9a96a'};
-  for(var r=0;r<7;r++)for(var k=0;k<8;k++){
-    var s=document.createElement('span'),c=map[r][k];
-    if(c!=='.')s.style.background=(c==='T'&&r===0&&k%3===0)?'#c9a96a':fill[c];
-    s.style.animationDelay=(300+(r+k)*60)+'ms';
-    m.appendChild(s);
-  }
-  document.getElementById('y').textContent=new Date().getFullYear();
-})();
-// nav: transparent to solid, mobile menu
-var nav=document.getElementById('nav'),bg=document.getElementById('bg'),mn=document.getElementById('mn');
-function sc(){nav.classList.toggle('s',scrollY>40)}
-addEventListener('scroll',sc,{passive:true});sc();
-function tog(o){mn.classList.toggle('open',o);bg.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':''}
-bg.onclick=function(){tog(!mn.classList.contains('open'))};
-mn.addEventListener('click',function(e){if(e.target.tagName==='A')tog(false)});
-addEventListener('keydown',function(e){if(e.key==='Escape')tog(false)});
-// scroll reveal
-var els=document.querySelectorAll('.rv');
-if('IntersectionObserver' in window&&!rm){
-  var io=new IntersectionObserver(function(a){a.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
-  els.forEach(function(e){io.observe(e)});
-}else els.forEach(function(e){e.classList.add('in')});
-// gentle parallax
-var ps=document.querySelectorAll('[data-p]');
-if(!rm&&ps.length){var t=0;addEventListener('scroll',function(){if(t)return;t=requestAnimationFrame(function(){t=0;ps.forEach(function(p){p.style.transform='translateY('+(scrollY*p.dataset.p)+'px)'})})},{passive:true})}
-// contact form opens WhatsApp
-document.getElementById('f').addEventListener('submit',function(ev){
-  ev.preventDefault();
-  var n=document.getElementById('n').value.trim(),b=document.getElementById('b').value.trim(),m=document.getElementById('m').value.trim(),e=document.getElementById('e');
-  if(!n||!m){e.textContent='Add your name and what you need, then send again.';return}
-  e.textContent='';
-  window.open('https://wa.me/254757711537?text='+encodeURIComponent('Hi Widetrench, my name is '+n+(b?' from '+b:'')+'. '+m),'_blank');
-});
-</script>
+  <script>
+    (function () {
+      var toggles = document.querySelectorAll('.menu-toggle');
+
+      function closeAll() {
+        toggles.forEach(function (t) { t.checked = false; });
+      }
+
+      // When one window opens, close the others
+      toggles.forEach(function (t) {
+        t.addEventListener('change', function () {
+          if (t.checked) {
+            toggles.forEach(function (other) {
+              if (other !== t) other.checked = false;
+            });
+          }
+        });
+      });
+
+      // ----- Language switching (remembered across pages) -----
+      var langCurrent = document.querySelector('.lang-current');
+      var translatable = document.querySelectorAll('[data-sw]');
+      var placeholders = document.querySelectorAll('[data-sw-placeholder]');
+
+      // Save the English text once, before anything changes
+      translatable.forEach(function (el) { el.dataset.en = el.textContent.trim(); });
+      placeholders.forEach(function (el) { el.dataset.enPlaceholder = el.placeholder; });
+
+      function setLanguage(lang) {
+        document.documentElement.lang = lang;
+        translatable.forEach(function (el) {
+          el.textContent = lang === 'sw' ? el.dataset.sw : el.dataset.en;
+        });
+        placeholders.forEach(function (el) {
+          el.placeholder = lang === 'sw' ? el.dataset.swPlaceholder : el.dataset.enPlaceholder;
+        });
+        langCurrent.textContent = lang === 'sw' ? 'Swahili' : 'English (UK)';
+        try { localStorage.setItem('breezeLang', lang); } catch (e) {}
+      }
+
+      document.querySelectorAll('.lang-menu a').forEach(function (link) {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          setLanguage(link.dataset.lang === 'Swahili' ? 'sw' : 'en');
+          closeAll();
+        });
+      });
+
+      // Restore the language chosen on any page
+      var saved = null;
+      try { saved = localStorage.getItem('breezeLang'); } catch (e) {}
+      if (saved === 'sw') setLanguage('sw');
+
+      // Close when tapping outside the open windows
+      document.addEventListener('click', function (e) {
+        if (e.target.classList.contains('menu-toggle')) return;
+        if (e.target.closest('label')) return;
+
+        if (e.target.closest('a')) closeAll();
+
+        if (!e.target.closest('.contact-wrap') &&
+            !e.target.closest('.lang-wrap') &&
+            !e.target.closest('.main-bar') &&
+            !e.target.closest('.mobile-menu') &&
+            !e.target.closest('.search-panel') &&
+            !e.target.closest('.account-panel')) {
+          closeAll();
+        }
+      });
+
+      // Close when the page scrolls
+      window.addEventListener('scroll', closeAll, { passive: true });
+
+      // Set the footer year
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+  </script>
+
+  <script>
+    (function () {
+      var photos = [].slice.call(document.querySelectorAll('.service-card img'));
+      var ticking = false;
+
+      function update() {
+        var vh = window.innerHeight;
+
+        photos.forEach(function (img) {
+          var r = img.getBoundingClientRect();
+          var progress = (vh - r.top) / (vh + r.height);
+          progress = Math.min(Math.max(progress, 0), 1);
+          img.style.objectPosition = '50% ' + (100 - progress * 100) + '%';
+        });
+
+        ticking = false;
+      }
+
+      function request() {
+        if (!ticking) {
+          ticking = true;
+          requestAnimationFrame(update);
+        }
+      }
+
+      window.addEventListener('scroll', request, { passive: true });
+      window.addEventListener('resize', request);
+      update();
+    })();
+  </script>
+
+  <script>
+    (function () {
+      var header = document.querySelector('.site-header');
+      var lastY = window.pageYOffset;
+      var ticking = false;
+
+      function update() {
+        var y = window.pageYOffset;
+        var diff = y - lastY;
+
+        if (y < 80) {
+          header.classList.remove('top-hidden');   // always show near the top of the page
+        } else if (diff > 6) {
+          header.classList.add('top-hidden');      // scrolling down: hide the top bar
+        } else if (diff < -6) {
+          header.classList.remove('top-hidden');   // scrolling up: show it again
+        }
+
+        lastY = y;
+        ticking = false;
+      }
+
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          ticking = true;
+          requestAnimationFrame(update);
+        }
+      }, { passive: true });
+    })();
+  </script>
+
+  <script>
+    (function () {
+      var input = document.querySelector('.search-input');
+      var panel = document.querySelector('.search-panel');
+      if (!input || !panel) return;
+
+      var results = document.createElement('div');
+      results.className = 'search-results';
+      panel.appendChild(results);
+
+      // Clean up text so matching is simple
+      function clean(s) {
+        return (s || '').replace(/\s+/g, ' ').trim();
+      }
+
+      // Build the searchable list from the page itself, so it always matches what is shown
+      function buildItems() {
+        var items = [];
+
+        document.querySelectorAll('.hero').forEach(function () {
+          items.push({
+            title: clean(document.querySelector('.hero h1').textContent),
+            text: clean(document.querySelector('.hero-subtitle').textContent),
+            href: '#home'
+          });
+        });
+
+        document.querySelectorAll('.service-card').forEach(function (card) {
+          items.push({
+            title: clean(card.querySelector('h3').textContent),
+            text: clean(card.querySelector('p').textContent),
+            href: '#services'
+          });
+        });
+
+        document.querySelectorAll('.faq-item').forEach(function (faq) {
+          items.push({
+            title: clean(faq.querySelector('summary').textContent),
+            text: clean(faq.querySelector('p').textContent),
+            href: '#faq',
+            faq: faq
+          });
+        });
+
+        // Other pages, with both languages in the keywords so either language finds them
+        items.push({
+          title: 'How It Works',
+          text: 'Jinsi Inavyofanya Kazi. Book your service, we collect your laundry, professional cleaning, fresh laundry delivered.',
+          href: 'how-it-works.html'
+        });
+        items.push({
+          title: 'Book a Pickup',
+          text: 'Omba Kuchukuliwa. Book your laundry pickup, choose a service, schedule a time, pay by M-Pesa.',
+          href: 'booking.html'
+        });
+        items.push({
+          title: 'Feedback and Complaints',
+          text: 'Maoni na Malalamiko. Send feedback, a complaint or a suggestion, and leave your phone number.',
+          href: 'feedback.html'
+        });
+
+        return items;
+      }
+
+      var items = buildItems();
+
+      function search(query) {
+        results.innerHTML = '';
+        var words = clean(query).toLowerCase().split(' ').filter(Boolean);
+        if (!words.length) return;
+
+        var matches = items.filter(function (item) {
+          var haystack = (item.title + ' ' + item.text).toLowerCase();
+          return words.every(function (w) { return haystack.indexOf(w) !== -1; });
+        });
+
+        if (!matches.length) {
+          var empty = document.createElement('div');
+          empty.className = 'search-empty';
+          empty.textContent = 'No results for "' + clean(query) + '". Try another word, such as services, pricing, pickup or FAQ.';
+          results.appendChild(empty);
+          return;
+        }
+
+        matches.slice(0, 8).forEach(function (item, index) {
+          var link = document.createElement('a');
+          link.className = 'search-result';
+          link.href = item.href;
+          link.dataset.index = items.indexOf(item);
+
+          var title = document.createElement('strong');
+          title.textContent = item.title;
+
+          var snippet = document.createElement('span');
+          snippet.textContent = item.text.length > 110 ? item.text.slice(0, 110) + '…' : item.text;
+
+          link.appendChild(title);
+          link.appendChild(snippet);
+          results.appendChild(link);
+        });
+      }
+
+      input.addEventListener('input', function () { search(input.value); });
+
+      // Enter opens the first result
+      input.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') {
+          var first = results.querySelector('.search-result');
+          if (first) first.click();
+        }
+      });
+
+      // Opening a FAQ result also opens that question
+      results.addEventListener('click', function (e) {
+        var link = e.target.closest('.search-result');
+        if (!link) return;
+        var item = items[link.dataset.index];
+        if (item && item.faq) item.faq.open = true;
+      });
+    })();
+  </script>
+
 </body>
 </html>
